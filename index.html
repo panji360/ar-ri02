@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR for Candra Kirana Scene 5</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<!-- include ar.js for A-Frame -->
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+<script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+
+<style>
+    .info-text {
+        height: 15%;
+        width: 100%;
+        position: bottom;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(15, 61, 185, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info-text div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+    }
+
+    .btn {
+        border: none;
+        text-align: center;
+        cursor: pointer;
+        padding: 4px;
+        border-radius: 50%;
+        font-size: 24px;
+    }
+
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+
+@keyframes appear {
+  0%{
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  animation: appear 350ms ease-in 1;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+</style>
+
+<script>
+    
+    AFRAME.registerComponent('markerhandler', 
+    {
+        init: function () 
+        {
+            let myText = document.querySelector("#textContent")
+            const element = document.querySelector('.info-text')
+            
+            const btn = document.createElement("span")
+            const info = document.createElement("i")
+    
+            const btnAtt = document.createAttribute("class")
+            btnAtt.value = "btn"
+    
+            const iAtt = document.createAttribute("class")
+            iAtt.value = "fa fa-info-circle"
+    
+            info.setAttributeNode(iAtt)
+            btn.setAttributeNode(btnAtt)
+            btn.appendChild(info)
+
+            var modal = document.getElementById("myModal")
+            var modalContent = document.getElementById("words")
+            var span = document.getElementsByClassName("close")[0]
+
+            // sound buttons
+            const sndBtn = document.createElement("span")
+            const vol = document.createElement("i")
+
+            const sndAtt = document.createAttribute("class")
+            sndAtt.value = "btn"
+
+            const vAtt = document.createAttribute("class")
+            vAtt.value = "fa fa-volume-down"
+
+            vol.setAttributeNode(vAtt)
+            sndBtn.setAttributeNode(sndAtt)
+            sndBtn.appendChild(vol)
+
+
+            this.el.addEventListener('markerFound', () => {
+
+                switch (this.el.id)
+                {
+                    case "ceng":
+                        myText.innerHTML = "This is ceng-ceng  "
+                        myText.appendChild(btn)
+                        btn.onclick = function() {
+                            modal.style.display = "block"
+                        }
+                        modalContent.innerHTML = "Ceng-ceng consists of small cymbals made of thick brass and a large dome. In gamelan gambuh, which is a type of gamelan performance that has been around since 14th century, this percussion is used to enrich the beats peformed on other percussions, such as \"kendang\", \"klenang\", and \"kemenak (gumanak)\"."
+                        modalContent.innerHTML += "<br>Press this speaker button at the bottom of this page to find out how it sounds. When you're done, simply move your camera away from the marker.<br>Image from: the University of Washington Ethnomusicology Archives.<br>Sound by: Musica, with background music by Suara Nakal."
+                        modalContent.appendChild(sndBtn)
+
+                        sndBtn.onclick = function() {
+                            document.getElementById("cengmusic").play()
+                        }
+
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        break
+
+                    case "gentorag":
+                        myText.innerHTML = "This is gentorag  "
+                        myText.appendChild(btn)
+                        btn.onclick = function() {
+                            modal.style.display = "block"
+                        }
+                        modalContent.innerHTML = "Gentorag is a bell tree consisting of a wooden pole and surrounded by three wooden rings affixed to bamboo cross-bars. It is one of the iconic instruments played in Balinese gamelan of gambuh type, which is descended from ancient Majapahit gambuh performances (circa 14th century).<br>In gamelan gambuh ensemble, gentorag is shaken in time with the strokes of a large gong."
+                        modalContent.innerHTML += "<br>Image from: the University of Washington Ethnomusicology Archives."
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        break
+                    
+                    case "klenang":
+                        myText.innerHTML = "This is klenang  "
+                        myText.appendChild(btn)
+                        btn.onclick = function() {
+                            modal.style.display = "block"
+                        }
+                        modalContent.innerHTML = "Klenang is a high-pitched gong made of bronze and mounted on a stand. In gamelan gambuh, this percussion is used as a time tracker. It is played between each beat performed on another small gong called \"kajar\", while the \"kajar\" gong is performed in a pattern that reinforces the strokes of the two \"kendang\" drums."
+                        modalContent.innerHTML += "<br>Image from: the University of Washington Ethnomusicology Archives."
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        break
+
+                    case "gumanak":
+                        myText.innerHTML = "This is gumanak  "
+                        myText.appendChild(btn)
+                        btn.onclick = function() {
+                            modal.style.display = "block"
+                        }
+                        modalContent.innerHTML = "Gumanak is an idiophone in the form of metal tube with a split in its concave surface. This rare instrument is specific to Balinese gamelan of gambuh type.<br>It is an adaptation of a similar instrument called \"kemanak\", which is found in Central Javanese gamelan, albeit more rarely.<br>Evidence of its existence has been found since 14th Century, from the time when Majapahit was the dominant kingdom in Java."
+                        modalContent.innerHTML += "<br>Press this speaker button at the bottom of this page to find out how it sounds. When you're done, simply move your camera away from the marker.<br>Image from: the University of Washington Ethnomusicology Archives.<br>Music by: Singa Nglaras."
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        break
+
+                    case "rebab":
+                        myText.innerHTML = "This is rebab  "
+                        myText.appendChild(btn)
+                        btn.onclick = function() {
+                            modal.style.display = "block"
+                        }
+                        modalContent.innerHTML = "This string instrument is one of the essential parts of gamelan gambuh that is still popular today in Bali, which is descended from ancient gambuh performance dated back to Majapahit era in the 14th century.<br>Beside being played as part of gamelan gambuh, rebab is also popular amongs Malay community in Peninsular Malaysia. It is usually made with a wooden body and a belly from the lining of a cow\'s stomach."
+                        modalContent.innerHTML += "<br>Press this speaker button at the bottom of this page to find out how it sounds. When you're done, simply move your camera away from the marker.<br>Image and sound from: the University of Washington Ethnomusicology Archives."
+                        
+                        modalContent.appendChild(sndBtn)
+
+                        sndBtn.onclick = function() {
+                            document.getElementById("rebabsuling").play()
+                        }
+
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        break
+
+                    case "suling":
+                        myText.innerHTML = "This is suling  "
+                        myText.appendChild(btn)
+                        btn.onclick = function() {
+                            modal.style.display = "block"
+                        }
+                        modalContent.innerHTML = "This bamboo flute is one of the essential parts of gamelan gambuh, besides rebab and kendang. Several of the flutes are played together in a gambuh ensemble.<br>Today, suling is also popular not just in Indonesia, but also Malaysia and southern Philippines. The variant used in Balinese gambuh is made of bamboo tube, open at the bottom and closed with a node at the top."
+                        modalContent.innerHTML += "<br>Press this speaker button at the bottom of this page to find out how it sounds. When you're done, simply move your camera away from the marker.<br>Image and sound from: the University of Washington Ethnomusicology Archives."
+                        
+                        modalContent.appendChild(sndBtn)
+
+                        sndBtn.onclick = function() {
+                            document.getElementById("rebabsuling").play()
+                        }
+
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        break
+
+                    case "kendang":
+                        myText.innerHTML = "This is kendang  "
+                        myText.appendChild(btn)
+                        btn.onclick = function() {
+                            modal.style.display = "block"
+                        }
+                        modalContent.innerHTML = "Kendang is a drum of cylindrical shape tapering slightly at one end. In Balinese gamelan, kendang has a body made of jackfruit wood and heads made of cowhide.<br>It is played in pairs, consisting of kendang \"wadon\" (female drum), which has lower pitch, and kendang \"lanang\" (male drum), which is more high-pitched. Both pairs are essential in a gambuh ensemble."
+                        modalContent.innerHTML += "<br>Press this speaker button at the bottom of this page to find out how it sounds. When you're done, simply move your camera away from the marker.<br>Image from: the University of Washington Ethnomusicology Archives.<br>Sound by: Musica, with background music by Suara Nakal."
+                        
+                        modalContent.appendChild(sndBtn)
+
+                        sndBtn.onclick = function() {
+                            document.getElementById("kendangmusic").play()
+                        }
+
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        break
+                }
+
+            })
+            
+            //el.sceneEl will listen to (all elements in) the scene as compared to any particular element like above
+            this.el.sceneEl.addEventListener('markerLost', () => {
+                myText.innerHTML = "Please scan a marker"
+                document.querySelectorAll('audio').forEach(el => el.pause())
+            })
+
+        }
+    })
+
+
+</script>
+
+<body style='margin : 0px; overflow: hidden;'>
+
+    <div class="info-text" id="textBox">
+        <div><p id="textContent">Please scan a marker</p></div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="words">Wow!</p>
+        </div>
+    </div>
+
+    <!-- audio files -->
+    <audio id="cengmusic" src="sounds/hujan-mas-cengceng.mp3"></audio>
+    <audio id="kendangmusic" src="sounds/hujan-mas-kendang-lanang.mp3"></audio>
+    <audio id="rebabsuling" src="sounds/gamelan-sulings-and-rebab.mp3"></audio>
+
+    <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' 
+        renderer="colorManagement: true; logarithmicDepthBuffer: true" vr-mode-ui="enabled: false">
+
+        <a-marker markerhandler type='pattern' url='textures/pattern-cengceng.patt' id="ceng"
+            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+
+            <a-image id="cengjpg" src="images/cengceng.jpg" rotation="-90 0 0" class="clickable"></a-image>
+        </a-marker>
+
+        <a-marker markerhandler type='pattern' url='textures/pattern-gentorag.patt' id="gentorag"
+            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+
+            <a-image id="gentoragjpg" src="images/gentorag.jpg" rotation="-90 0 0" class="clickable"></a-image>
+        </a-marker>
+
+        <a-marker markerhandler type='pattern' url='textures/pattern-klenang.patt' id="klenang"
+            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+
+            <a-image id="klenangjpg" src="images/klenang.jpg" rotation="-90 0 0" class="clickable"></a-image>
+        </a-marker>
+
+        <a-marker markerhandler type='pattern' url='textures/pattern-gumanak.patt' id="gumanak"
+            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+
+            <a-image id="gumanakjpg" src="images/gumanak.jpg" rotation="-90 0 0" class="clickable"></a-image>
+        </a-marker>
+        
+        <a-marker markerhandler type='pattern' url='textures/pattern-rebab.patt' id="rebab"
+            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+
+            <a-image id="rebabjpg" src="images/rebab.jpg" size="0 1.5 0" rotation="-90 0 0" class="clickable"></a-image>
+        </a-marker>
+
+        <a-marker markerhandler type='pattern' url='textures/pattern-suling.patt' id="suling"
+            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+
+            <a-image id="sulingjpg" src="images/suling.jpg" size="0 1.5 0" rotation="-90 0 0" class="clickable"></a-image>
+        </a-marker>
+
+        <a-marker markerhandler type='pattern' url='textures/pattern-kendang.patt' id="kendang"
+            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+
+            <a-image id="kendangjpg" src="images/kendang.jpg" rotation="-90 0 0" class="clickable"></a-image>
+        </a-marker>
+        
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
