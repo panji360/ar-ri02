@@ -120,13 +120,13 @@
 
                 switch (this.el.id)
                 {
-                    case "ceng":
-                        myText.innerHTML = "This is ceng-ceng  "
+                    case "parang":
+                        myText.innerHTML = "This is parang rusak barong  "
                         myText.appendChild(btn)
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Ceng-ceng consists of small cymbals made of thick brass and a large dome. In gamelan gambuh, which is a type of gamelan performance that has been around since 14th century, this percussion is used to enrich the beats peformed on other percussions, such as \"kendang\", \"klenang\", and \"kemenak (gumanak)\"."
+                        modalContent.innerHTML = "Parang rusak parong."
                         
                         span.onclick = function() {
                             modal.style.display = "none";
@@ -136,13 +136,13 @@
                         }
                         break
 
-                    case "gentorag":
-                        myText.innerHTML = "This is gentorag  "
+                    case "kawung":
+                        myText.innerHTML = "This is kawung kembang  "
                         myText.appendChild(btn)
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Gentorag is a bell tree consisting of a wooden pole and surrounded by three wooden rings affixed to bamboo cross-bars. It is one of the iconic instruments played in Balinese gamelan of gambuh type, which is descended from ancient Majapahit gambuh performances (circa 14th century).<br>In gamelan gambuh ensemble, gentorag is shaken in time with the strokes of a large gong."
+                        modalContent.innerHTML = "Kawung is fit for a Javanese princess."
                         
                         span.onclick = function() {
                             modal.style.display = "none";
@@ -152,13 +152,13 @@
                         }
                         break
                     
-                    case "klenang":
-                        myText.innerHTML = "This is klenang  "
+                    case "pucuk":
+                        myText.innerHTML = "This is pucuk rebung  "
                         myText.appendChild(btn)
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Klenang is a high-pitched gong made of bronze and mounted on a stand. In gamelan gambuh, this percussion is used as a time tracker. It is played between each beat performed on another small gong called \"kajar\", while the \"kajar\" gong is performed in a pattern that reinforces the strokes of the two \"kendang\" drums."
+                        modalContent.innerHTML = "Pucuk rebung is more popular in pesisir area."
                         
                         span.onclick = function() {
                             modal.style.display = "none";
@@ -168,13 +168,13 @@
                         }
                         break
 
-                    case "gumanak":
-                        myText.innerHTML = "This is gumanak  "
+                    case "pikul":
+                        myText.innerHTML = "This is pikul  "
                         myText.appendChild(btn)
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Gumanak is an idiophone in the form of metal tube with a split in its concave surface. This rare instrument is specific to Balinese gamelan of gambuh type.<br>It is an adaptation of a similar instrument called \"kemanak\", which is found in Central Javanese gamelan, albeit more rarely.<br>Evidence of its existence has been found since 14th Century, from the time when Majapahit was the dominant kingdom in Java."
+                        modalContent.innerHTML = "Thai flower symbol."
                        
                         span.onclick = function() {
                             modal.style.display = "none";
@@ -184,20 +184,13 @@
                         }
                         break
 
-                    case "rebab":
-                        myText.innerHTML = "This is rebab  "
+                    case "kanchil":
+                        myText.innerHTML = "This is kanchil!"
                         myText.appendChild(btn)
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "This string instrument is one of the essential parts of gamelan gambuh that is still popular today in Bali, which is descended from ancient gambuh performance dated back to Majapahit era in the 14th century.<br>Beside being played as part of gamelan gambuh, rebab is also popular amongs Malay community in Peninsular Malaysia. It is usually made with a wooden body and a belly from the lining of a cow\'s stomach."
-                        
-                        
-                        modalContent.appendChild(sndBtn)
-
-                        sndBtn.onclick = function() {
-                            document.getElementById("rebabsuling").play()
-                        }
+                        modalContent.innerHTML = "You found kanchil!"
 
                         span.onclick = function() {
                             modal.style.display = "none";
@@ -207,37 +200,6 @@
                         }
                         break
 
-                    case "suling":
-                        myText.innerHTML = "This is suling  "
-                        myText.appendChild(btn)
-                        btn.onclick = function() {
-                            modal.style.display = "block"
-                        }
-                        modalContent.innerHTML = "This bamboo flute is one of the essential parts of gamelan gambuh, besides rebab and kendang. Several of the flutes are played together in a gambuh ensemble.<br>Today, suling is also popular not just in Indonesia, but also Malaysia and southern Philippines. The variant used in Balinese gambuh is made of bamboo tube, open at the bottom and closed with a node at the top."
-                        
-                        span.onclick = function() {
-                            modal.style.display = "none";
-                        }
-                        modal.onclick = function() {
-                            modal.style.display = "none";
-                        }
-                        break
-
-                    case "kendang":
-                        myText.innerHTML = "This is kendang  "
-                        myText.appendChild(btn)
-                        btn.onclick = function() {
-                            modal.style.display = "block"
-                        }
-                        modalContent.innerHTML = "Kendang is a drum of cylindrical shape tapering slightly at one end. In Balinese gamelan, kendang has a body made of jackfruit wood and heads made of cowhide.<br>It is played in pairs, consisting of kendang \"wadon\" (female drum), which has lower pitch, and kendang \"lanang\" (male drum), which is more high-pitched. Both pairs are essential in a gambuh ensemble."
-                       
-                        span.onclick = function() {
-                            modal.style.display = "none";
-                        }
-                        modal.onclick = function() {
-                            modal.style.display = "none";
-                        }
-                        break
                 }
 
             })
@@ -273,46 +235,34 @@
     <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' 
         renderer="colorManagement: true; logarithmicDepthBuffer: true" vr-mode-ui="enabled: false">
 
-        <a-marker markerhandler type='pattern' url='textures/pattern-cengceng.patt' id="ceng"
+        <a-marker markerhandler type='pattern' url='textures/pattern-parang.patt' id="parang"
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
 
-            <a-image id="cengjpg" src="images/cengceng.jpg" rotation="-90 0 0" class="clickable"></a-image>
+            <a-image id="parangjpg" src="images/parang-barong.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
 
-        <a-marker markerhandler type='pattern' url='textures/pattern-gentorag.patt' id="gentorag"
+        <a-marker markerhandler type='pattern' url='textures/pattern-kawung.patt' id="kawung"
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
 
-            <a-image id="gentoragjpg" src="images/gentorag.jpg" rotation="-90 0 0" class="clickable"></a-image>
+            <a-image id="kawungjpg" src="images/kawung-kembang.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
 
-        <a-marker markerhandler type='pattern' url='textures/pattern-klenang.patt' id="klenang"
+        <a-marker markerhandler type='pattern' url='textures/pattern-pucuk.patt' id="pucuk"
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
 
-            <a-image id="klenangjpg" src="images/klenang.jpg" rotation="-90 0 0" class="clickable"></a-image>
+            <a-image id="pucukjpg" src="images/pucuk-rebung.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
 
-        <a-marker markerhandler type='pattern' url='textures/pattern-gumanak.patt' id="gumanak"
+        <a-marker markerhandler type='pattern' url='textures/pattern-pikul.patt' id="pikul"
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
 
-            <a-image id="gumanakjpg" src="images/gumanak.jpg" rotation="-90 0 0" class="clickable"></a-image>
+            <a-image id="pikuljpg" src="images/pikul-flower.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
         
-        <a-marker markerhandler type='pattern' url='textures/pattern-rebab.patt' id="rebab"
+        <a-marker markerhandler type='pattern' url='textures/pattern-kanchil2.patt' id="kanchil"
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
 
-            <a-image id="rebabjpg" src="images/rebab.jpg" size="0 1.5 0" rotation="-90 0 0" class="clickable"></a-image>
-        </a-marker>
-
-        <a-marker markerhandler type='pattern' url='textures/pattern-suling.patt' id="suling"
-            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-
-            <a-image id="sulingjpg" src="images/suling.jpg" size="0 1.5 0" rotation="-90 0 0" class="clickable"></a-image>
-        </a-marker>
-
-        <a-marker markerhandler type='pattern' url='textures/pattern-kendang.patt' id="kendang"
-            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-
-            <a-image id="kendangjpg" src="images/kendang.jpg" rotation="-90 0 0" class="clickable"></a-image>
+            <a-image id="kanchiljpg" src="images/kanchil-ri02s.jpg" size="0 1.5 0" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
         
         <a-entity camera></a-entity>
