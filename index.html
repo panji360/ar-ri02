@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR for Candra Kirana Scene 5</title>
+    <title>AR for Raden Inu Scene 2</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
@@ -116,21 +116,6 @@
             var modalContent = document.getElementById("words")
             var span = document.getElementsByClassName("close")[0]
 
-            // sound buttons
-            const sndBtn = document.createElement("span")
-            const vol = document.createElement("i")
-
-            const sndAtt = document.createAttribute("class")
-            sndAtt.value = "btn"
-
-            const vAtt = document.createAttribute("class")
-            vAtt.value = "fa fa-volume-down"
-
-            vol.setAttributeNode(vAtt)
-            sndBtn.setAttributeNode(sndAtt)
-            sndBtn.appendChild(vol)
-
-
             this.el.addEventListener('markerFound', () => {
 
                 switch (this.el.id)
@@ -142,13 +127,7 @@
                             modal.style.display = "block"
                         }
                         modalContent.innerHTML = "Ceng-ceng consists of small cymbals made of thick brass and a large dome. In gamelan gambuh, which is a type of gamelan performance that has been around since 14th century, this percussion is used to enrich the beats peformed on other percussions, such as \"kendang\", \"klenang\", and \"kemenak (gumanak)\"."
-                        modalContent.innerHTML += "<br>Press this speaker button at the bottom of this page to find out how it sounds. When you're done, simply move your camera away from the marker.<br>Image from: the University of Washington Ethnomusicology Archives.<br>Sound by: Musica, with background music by Suara Nakal."
-                        modalContent.appendChild(sndBtn)
-
-                        sndBtn.onclick = function() {
-                            document.getElementById("cengmusic").play()
-                        }
-
+                        
                         span.onclick = function() {
                             modal.style.display = "none";
                         }
@@ -164,7 +143,7 @@
                             modal.style.display = "block"
                         }
                         modalContent.innerHTML = "Gentorag is a bell tree consisting of a wooden pole and surrounded by three wooden rings affixed to bamboo cross-bars. It is one of the iconic instruments played in Balinese gamelan of gambuh type, which is descended from ancient Majapahit gambuh performances (circa 14th century).<br>In gamelan gambuh ensemble, gentorag is shaken in time with the strokes of a large gong."
-                        modalContent.innerHTML += "<br>Image from: the University of Washington Ethnomusicology Archives."
+                        
                         span.onclick = function() {
                             modal.style.display = "none";
                         }
@@ -180,7 +159,7 @@
                             modal.style.display = "block"
                         }
                         modalContent.innerHTML = "Klenang is a high-pitched gong made of bronze and mounted on a stand. In gamelan gambuh, this percussion is used as a time tracker. It is played between each beat performed on another small gong called \"kajar\", while the \"kajar\" gong is performed in a pattern that reinforces the strokes of the two \"kendang\" drums."
-                        modalContent.innerHTML += "<br>Image from: the University of Washington Ethnomusicology Archives."
+                        
                         span.onclick = function() {
                             modal.style.display = "none";
                         }
@@ -196,7 +175,7 @@
                             modal.style.display = "block"
                         }
                         modalContent.innerHTML = "Gumanak is an idiophone in the form of metal tube with a split in its concave surface. This rare instrument is specific to Balinese gamelan of gambuh type.<br>It is an adaptation of a similar instrument called \"kemanak\", which is found in Central Javanese gamelan, albeit more rarely.<br>Evidence of its existence has been found since 14th Century, from the time when Majapahit was the dominant kingdom in Java."
-                        modalContent.innerHTML += "<br>Press this speaker button at the bottom of this page to find out how it sounds. When you're done, simply move your camera away from the marker.<br>Image from: the University of Washington Ethnomusicology Archives.<br>Music by: Singa Nglaras."
+                       
                         span.onclick = function() {
                             modal.style.display = "none";
                         }
@@ -212,7 +191,7 @@
                             modal.style.display = "block"
                         }
                         modalContent.innerHTML = "This string instrument is one of the essential parts of gamelan gambuh that is still popular today in Bali, which is descended from ancient gambuh performance dated back to Majapahit era in the 14th century.<br>Beside being played as part of gamelan gambuh, rebab is also popular amongs Malay community in Peninsular Malaysia. It is usually made with a wooden body and a belly from the lining of a cow\'s stomach."
-                        modalContent.innerHTML += "<br>Press this speaker button at the bottom of this page to find out how it sounds. When you're done, simply move your camera away from the marker.<br>Image and sound from: the University of Washington Ethnomusicology Archives."
+                        
                         
                         modalContent.appendChild(sndBtn)
 
@@ -235,14 +214,7 @@
                             modal.style.display = "block"
                         }
                         modalContent.innerHTML = "This bamboo flute is one of the essential parts of gamelan gambuh, besides rebab and kendang. Several of the flutes are played together in a gambuh ensemble.<br>Today, suling is also popular not just in Indonesia, but also Malaysia and southern Philippines. The variant used in Balinese gambuh is made of bamboo tube, open at the bottom and closed with a node at the top."
-                        modalContent.innerHTML += "<br>Press this speaker button at the bottom of this page to find out how it sounds. When you're done, simply move your camera away from the marker.<br>Image and sound from: the University of Washington Ethnomusicology Archives."
                         
-                        modalContent.appendChild(sndBtn)
-
-                        sndBtn.onclick = function() {
-                            document.getElementById("rebabsuling").play()
-                        }
-
                         span.onclick = function() {
                             modal.style.display = "none";
                         }
@@ -258,14 +230,7 @@
                             modal.style.display = "block"
                         }
                         modalContent.innerHTML = "Kendang is a drum of cylindrical shape tapering slightly at one end. In Balinese gamelan, kendang has a body made of jackfruit wood and heads made of cowhide.<br>It is played in pairs, consisting of kendang \"wadon\" (female drum), which has lower pitch, and kendang \"lanang\" (male drum), which is more high-pitched. Both pairs are essential in a gambuh ensemble."
-                        modalContent.innerHTML += "<br>Press this speaker button at the bottom of this page to find out how it sounds. When you're done, simply move your camera away from the marker.<br>Image from: the University of Washington Ethnomusicology Archives.<br>Sound by: Musica, with background music by Suara Nakal."
-                        
-                        modalContent.appendChild(sndBtn)
-
-                        sndBtn.onclick = function() {
-                            document.getElementById("kendangmusic").play()
-                        }
-
+                       
                         span.onclick = function() {
                             modal.style.display = "none";
                         }
@@ -280,7 +245,7 @@
             //el.sceneEl will listen to (all elements in) the scene as compared to any particular element like above
             this.el.sceneEl.addEventListener('markerLost', () => {
                 myText.innerHTML = "Please scan a marker"
-                document.querySelectorAll('audio').forEach(el => el.pause())
+
             })
 
         }
@@ -304,11 +269,6 @@
             <p id="words">Wow!</p>
         </div>
     </div>
-
-    <!-- audio files -->
-    <audio id="cengmusic" src="sounds/hujan-mas-cengceng.mp3"></audio>
-    <audio id="kendangmusic" src="sounds/hujan-mas-kendang-lanang.mp3"></audio>
-    <audio id="rebabsuling" src="sounds/gamelan-sulings-and-rebab.mp3"></audio>
 
     <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' 
         renderer="colorManagement: true; logarithmicDepthBuffer: true" vr-mode-ui="enabled: false">
