@@ -126,7 +126,7 @@
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Parang rusak parong."
+                        modalContent.innerHTML = "In Javanese arts, the parang motif is usually associated with youths and bravery, so it is popularly worn by young noblemen. A specific pattern in the same group, called “parang rusak” used to be reserved only for the king’s sons and daughters, brothers, and uncles. The giant form of this motif, “parang rusak barong”, could only be worn by the king, his wife, and his first son."
                         
                         span.onclick = function() {
                             modal.style.display = "none";
@@ -136,13 +136,13 @@
                         }
                         break
 
-                    case "kawung":
-                        myText.innerHTML = "This is kawung kembang  "
+                    case "ceplok":
+                        myText.innerHTML = "This is ceplok kembang  "
                         myText.appendChild(btn)
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Kawung is fit for a Javanese princess."
+                        modalContent.innerHTML = "Ceplok motif has repetitive geometrical patterns, mostly of squares and circles. It is used to depict forms of nature, such as flowers (opened up and seen from above), fruits, birds, insects, or fish. The word “ceplok” means metal clasp ornament with roses, stars, and other little things. Ceplok patterns that feature flowers and stars are often used to symbolise love, or falling in love, and thus quite frequently used by lovers or as wedding attires. It is definitely suitable to be gifted to a Javanese princess!"
                         
                         span.onclick = function() {
                             modal.style.display = "none";
@@ -158,7 +158,7 @@
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Pucuk rebung is more popular in pesisir area."
+                        modalContent.innerHTML = "In contrast to Javanese traditional Batik patterns, the Malaysian counterparts usually have more prominent geometrical patterns and are less concerned with strict philosophical guidelines[. Batik in Malaysia has never been regarded as the main dressing code of the royal households. Floral patterns are the most common Batik motifs in Malaysia. Of this, the pattern pucuk rebung (bamboo shoot), with prominent triangular elements, is one of the more well-known styles that are still being used even until today."
                         
                         span.onclick = function() {
                             modal.style.display = "none";
@@ -174,7 +174,7 @@
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Thai flower symbol."
+                        modalContent.innerHTML = "Batik techniques were only more widely adopted by the Thais around 17th century, when the Javanese Batik creators had much improved their techniques for better exports. As a result, the Thais had more liberties in designing their Batik. Floral and geometrical motifs remained popular, but there were also more abstract patterns. The Thais also blended influences from the Malays and Chinese, and designed the patterns not just for textiles, but also for ceramic arts and crafts. A pattern called “Pikul flower”, which is the provincial flower of Narathiwat Province, is still used today as its local identity."
                        
                         span.onclick = function() {
                             modal.style.display = "none";
@@ -186,18 +186,7 @@
 
                     case "kanchil":
                         myText.innerHTML = "This is kanchil!<br>His name is Puntah"
-                        myText.appendChild(btn)
-                        btn.onclick = function() {
-                            modal.style.display = "block"
-                        }
-                        modalContent.innerHTML = "You found kanchil!"
-
-                        span.onclick = function() {
-                            modal.style.display = "none";
-                        }
-                        modal.onclick = function() {
-                            modal.style.display = "none";
-                        }
+                        
                         break
 
                 }
@@ -241,10 +230,10 @@
             <a-image id="parangjpg" src="images/parang-barong.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
 
-        <a-marker markerhandler type='pattern' url='textures/pattern-kawung.patt' id="kawung"
+        <a-marker markerhandler type='pattern' url='textures/pattern-ceplok.patt' id="ceplok"
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
 
-            <a-image id="kawungjpg" src="images/kawung-kembang.jpg" rotation="-90 0 0" class="clickable"></a-image>
+            <a-image id="ceplokjpg" src="images/ceplok-kembang.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
 
         <a-marker markerhandler type='pattern' url='textures/pattern-pucuk.patt' id="pucuk"
